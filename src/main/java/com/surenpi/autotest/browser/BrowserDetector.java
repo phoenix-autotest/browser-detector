@@ -7,6 +7,16 @@ public interface BrowserDetector
 {
     String os();
     String browserVer(Browser browser);
-    String browserMajorVer(Browser browser);
+    default String browserMajorVer(Browser browser)
+    {
+        String version = browserVer(browser);
+        if(version != null && version.indexOf(".") != -1)
+        {
+            return version.split("\\.")[0];
+        }
+
+        return null;
+    }
+
     String browserPath(Browser browser);
 }

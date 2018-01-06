@@ -46,17 +46,6 @@ public class UbuntuBrowserDetector implements BrowserDetector
         return null;
     }
 
-    public String browserMajorVer(Browser browser)
-    {
-        String version = browserVer(browser);
-        if(version != null && version.indexOf(".") != -1)
-        {
-            return version.split("\\.")[0];
-        }
-
-        return null;
-    }
-
     public String browserPath(Browser browser)
     {
         return null;
